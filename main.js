@@ -180,10 +180,10 @@
     var feedback = '';
     function setFeedback(){
         var accord =  document.querySelector('#accordion')
-        var getFeedbackData =  JSON.parse(localStorage.getItem("feedBackData"))
+        // var getFeedbackData =  JSON.parse(localStorage.getItem("feedBackData"))
 
         
-        const htmlCard = getFeedbackData.map(x =>{
+        const htmlCard = feedBackData.map(x =>{
          const accordData = `
          <div class="card">
                       <div class="card-header" role="tab" id="${x.userId}">
@@ -204,9 +204,7 @@
         accord.innerHTML = htmlCard
     }
 
-    function addFeedBack(){
-           localStorage.setItem("feedBackData", JSON.stringify(feedBackData))
-    }
+
 
     function getFeedback(){
         setFeedback();
@@ -217,7 +215,7 @@
         if(!feedBackData.includes(feedback)){
             feedBackData.push({name: namee,userId : userId, feedback : feedback})
            }
-       addFeedBack();
+    
        setFeedback();
 
 
