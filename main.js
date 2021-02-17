@@ -8,7 +8,7 @@
 
             var resData = await fetch('https://api.github.com/users/' + user)
             var x = await resData.json();
-            console.log(x);
+          
             var divMedia = document.querySelector('#mediaData')
             if(x.length < 1){
                 divMedia.innerHTML = '<em> oops! No data found, please retry.'
@@ -66,7 +66,7 @@
         async function getRepoData(user) {
             var ressData = await fetch('https://api.github.com/users/' + user + '/repos?user,2,2,true');
             var data = await ressData.json();
-            console.log(data)
+           
             var divMedia = document.querySelector('.userDetails')
             if(data.length < 1){
                 divMedia.innerHTML = '<em> oops! No data found, please retry.'
@@ -108,7 +108,7 @@
         async function getDataForSearchURLData(user) {
             var resData = await fetch('https://api.github.com/search/users?q=' + user + '&2,2')
             var data = await resData.json();
-            console.log(data);
+          
             var divMedia = document.querySelector('.userDetails')
             if(data.length < 1){
                 divMedia.innerHTML = '<em> oops! No data found, please retry.'
@@ -142,7 +142,7 @@
     async function getFollowerData(user) {
         var resData = await fetch('https://api.github.com/users/' + user + '/followers');
         var data = await resData.json();
-        console.log(data);
+       
     
         var divMedia = document.querySelector('.userDetails')
         if(data.length < 1){
@@ -181,7 +181,7 @@
     function setFeedback(){
         var accord =  document.querySelector('#accordion')
         var getFeedbackData =  JSON.parse(localStorage.getItem("feedBackData"))
-        console.log(getFeedbackData.feedback)
+
         
         const htmlCard = getFeedbackData.map(x =>{
          const accordData = `
