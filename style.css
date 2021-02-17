@@ -1,0 +1,98 @@
+
+.vertical-menu {
+    background: white;
+    width: 200px;
+    height: 800px;
+}
+
+.vertical-menu a {
+  background-color: transparent; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: rgb(218, 221, 228); /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
+.userDetails{
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.col-sm-6{
+    background-color: rgb(246, 248, 250);
+}
+
+.vertBtn{
+    color: white;
+}
+
+.btnVertOrg{
+    color: black;
+}
+
+.tempmediaData{
+    background: white !important;
+    border-radius: 6px;
+}
+
+body{
+    background-color: rgb(244, 245, 247);
+}
+
+.exp a{
+    color: white;
+    text-underline-offset: unset;
+}
+
+
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.afterTemp{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    color: grey;
+    margin-top: 10px;
+}
+
+footer{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    color: grey;
+
+   
+}
+footer a{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    color: grey;
+}
+
+.blockquote{
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    background-color: rgb(240, 239, 239);
+    border-radius: 10px;
+    
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> GitHub</title>
+    <link rel = "icon" href =  
+    "gitLogo.PNG" 
+            type = "image/x-icon"> 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        nav {
+            background-color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="setFeedback()">
+    <nav class="navbar navbar-dark navbar-expand-sm">
+        <div class="container fluid ml-0">
+            <button class="navbar-toggler d-sm-none" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon">
+
+                </span>
+            </button>
+            <a class="navbar-brand ml-0 mb-1" href="./index.html"><img src="gitLogo.PNG" height="30" width="41"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <form class="form-inline ">
+                    <input class="form-control mr-sm-2 w-70" id="getNameForNav" type="search"
+                        placeholder="Enter User Name for Direct Search" aria-label="Search">
+
+                </form>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                    onclick="getDataForSearchURLForNav()">Search</button>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"> <a class="nav-link" href="./Profile.html">Profile Details</a></li>
+                    <li class="nav-item "> <a class="nav-link" href="./Repositories.html">Repositories</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="./Folowers.html">Followers</a></li>
+                    <li class="nav-item">  <a class="nav-link" href="./SearchUser.html">Search User</a></li>
+                </ul>
+                <Span class="navbar-text">
+                    <a role="button" class="btn" data-toggle="modal" data-target="#loginModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z"/>
+                          </svg> Give us </br> Feedback
+                    </a>
+                </Span>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title align-items-center">Send us your Feedback</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="firstname" class="col-md-2 col-form-label">Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lastname" class="col-md-2 col-form-label">User ID</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="User Id">
+                            </div>
+                        </div>
+                     
+                        <div class="form-group row">
+                            <label for="feedback" class="col-md-2 col-form-label">Your Feedback</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" id="feedback" name="feedback" rows="12"></textarea>
+                            </div>
+                        </div>
+                       
+                    </form>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-md-10">
+                            <button type="submit" class="btn btn-primary" onclick="getFeedback()">Send Feedback</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-sm-3 vertical-menu d-none d-sm-block">
+                <form class="form-inline w-100">
+                    <label for="getNameVert"><strong>Find Repositories</strong></label>
+                    <input class="form-control mr-sm-2 w-70" id="getNameVert" type="search"
+                        placeholder="Enter User Name for Direct Search" aria-label="Search">
+
+                </form>
+                <button class="btn btn-success btn-outline-info vertBtn  mt-2" type="submit"
+                    onclick="getDataForSearchURLVert()">Search</button>
+
+                <a class="nav-link mt-2" href="./Profile.html">Profile Details</a>
+                <a class="nav-link" href="./Repositories.html">Repositories</a>
+                <a class="nav-link" href="./Folowers.html">Followers</a>
+                <a class="nav-link" href="./SearchUser.html">Search User</a>
+
+                <hr />
+                <p class="mt-2"><strong>Working with a team?</strong></p>
+                <p>GitHub is built for collaboration. Set up an organization to improve the way your team works
+                    together, and get access to more features.</p>
+                    <a type="button" class="btn btnVertOrg  btn-block btn-outline-primary vertBtn  mt-2" type="submit"
+                    href="SearchUser.html">Explore GitHub Users</a>
+            </div>
+            <div class="col-sm-6">
+                <div id="mediaData">
+                    <div class="form-group p-5">
+                        <label for="getNameForFoll"> <h4>Enter UserId For getting User Followers</h4></label>
+                        <input type="text" id="getNameForFoll" placeholder="Enter UserId For getting User Followers" class="form-control">
+                        <button type="submit" class="btn-block btn-info mt-2" onclick="getDataForFoll()">Get Followers
+                            Details</button>
+                    </div>
+                  
+                </div>
+                <div class="userDetails mt-2">
+
+                </div>
+                <footer class="footer text-center align-items-center mt-5">
+                    <div class="col-sm-12 ">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <a  href="./index.html"> <img src="foot.PNG" height="80px"> </a>
+                            </div>
+                        
+                            <div class="offset-sm-2 col-sm-2">
+    
+                                <ul class="list-unstyled">                              
+                                    <li><a href="https://github.blog/">Blog</a></li>
+                                    <li><a href="https://github.com/about">About</a></li>
+                                    <li><a href="https://github.myshopify.com/">Shop</a></li>
+                                    <li><a href="https://support.github.com/request">Contact GitHub</a> </li>
+                                    <li><a href="https://github.com/pricing">Pricing</a></li>                                 
+                                </ul>
+                            </div>
+                            <div class="col-sm-2">
+    
+                                <ul class="list-unstyled">
+                                    <li><a href="https://docs.github.com/en">API</a></li>
+                                    <li><a href="https://services.github.com/">Training</a></li>
+                                    <li><a href="https://www.githubstatus.com/">Status</a></li>
+                                    <li><a href="https://github.com/security">Security</a> </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-2">
+                                <ul class="list-unstyled">                                
+                                    <li><a href="https://docs.github.com/en/github/site-policy/github-terms-of-service">Terms</a></li>
+                                    <li><a href="https://docs.github.com/en/github/site-policy/github-privacy-statement">Privacy</a></li>
+                                    <li><a href="https://docs.github.com/en">Docs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </footer>
+               </div>
+               <div class="col-sm-3">
+                <h4>Comments & Feedback</h4>
+                <div id="accordion" class="userDetails">
+             
+               </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
